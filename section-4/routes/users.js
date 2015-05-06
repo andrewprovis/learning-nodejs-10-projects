@@ -78,7 +78,7 @@ router.post('/register', function(req, res, next) {
     User.createUser(newUser, function(err, user) {
       if (err) throw err;
       console.log(user);
-    })
+    });
 
     // Success message
     req.flash('success', 'You are now registered and may now log in.');
