@@ -18,7 +18,7 @@ router.get('/login', function(req, res, next) {
   });
 });
 
-router.post('/users/register', function(req, res, next) {
+router.post('/register', function(req, res, next) {
   // Get the form values
   var name = req.body.name;
   var email = req.body.email;
