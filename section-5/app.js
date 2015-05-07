@@ -64,6 +64,12 @@ app.use(function (req, res, next) {
   next();
 });
 
+// Make our db accessible to our router
+app.use(function(req,res,next){
+  req.db = db;
+  next();
+});
+
 app.use('/', routes);
 app.use('/users', users);
 
