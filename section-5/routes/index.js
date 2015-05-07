@@ -10,7 +10,6 @@ router.get('/', function(req, res, next) {
   posts.find({}, {}, function(err, posts) {
     res.render('index', {
       "posts": posts
-      //title: 'Express'
     });
   });
 });
