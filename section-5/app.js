@@ -57,6 +57,13 @@ app.use(expressValidator({
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Connect-Flash
+app.use(flash());
+app.use(function (req, res, next) {
+  res.locals.messages = require('express-messages')(req, res);
+  next();
+});
+
 app.use('/', routes);
 app.use('/users', users);
 
