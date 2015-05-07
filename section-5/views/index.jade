@@ -7,7 +7,7 @@ block content
         h1
           a(href='/posts/show/#{post._id}')
             =post.title
-        p.meta Posted in #{post.category} by #{post.author} on #{post.date}
+        p.meta Posted in #{post.category} by #{post.author} on #{moment(post.date).format("DD-MMM-YYYY")}
         =post.body
         a.more(href='/posts/show/#{post._id}') Read more
   else
