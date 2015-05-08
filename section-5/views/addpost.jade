@@ -30,3 +30,6 @@ block content
             option(value='Andrew Provis') Andrew Provis
             option(value='John Doe') John Doe
       input.btn.btn-default(name='submit', type='submit', value='Save')
+      script(src='/ckeditor/ckeditor.js')
+      script
+         | CKEDITOR.replace('body');
