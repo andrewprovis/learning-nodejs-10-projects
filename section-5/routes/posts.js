@@ -45,6 +45,25 @@ router.post('/add', function(req, res, next) {
             "body": body
         });
     } else {
+        var posts = db.get('posts');
+
+        // Submit to database
+        posts.insert({
+            "title": title,
+            "body": body,
+            "category": category,
+            "date": date,
+            "author": author,
+            "mainimage": mainimage
+        }, function(err, post) {
+            if (err) {
+                res.send('There was an issue submitting the post');
+            } else {
+                req.flash('success', 'Post Submitted');
+                res.loation('/');
+                res.redirect('/');
+            }
+        });
 
     }
 });
