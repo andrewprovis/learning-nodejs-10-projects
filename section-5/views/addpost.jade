@@ -16,6 +16,8 @@ block content
       .form-group
          label Category:
          select.form-control(name='category')
+            each category, i in categories
+               option(value='#{category.title}') #{category.title}
       .form-group
          label Body:
          textarea.form-control(name='body', id='body')
