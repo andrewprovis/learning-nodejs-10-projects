@@ -31,6 +31,22 @@ router.post('/add', function(req, res, next) {
     } else {
         var mainImageName = 'noimage.png';
     }
+
+    // Form validation
+    req.checkBody('title', 'Title field is required').notEmpty();
+    req.checkBody('body', 'Body field is required');
+
+    var errors = req.validationErrors();
+
+    if (errors) {
+        res.render('addpost', {
+            errors: errors,
+            "title": title,
+            "body": body
+        });
+    } else {
+
+    }
 });
 
 module.exports = router;
