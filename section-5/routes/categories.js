@@ -28,6 +28,20 @@ router.post('/add', function(req, res, next) {
             "title": title
         });
     } else {
+        var categories = db.get('categories');
+
+        // Submit to database
+        categories.insert({
+            "title": title
+        }, function(err, category) {
+            if (err) {
+                res.send('There was an issue submitting the category');
+            } else {
+                req.flash('success', 'Category Submitted');
+                res.location('/');
+                res.redirect('/');
+            }
+        });
     }
 });
 
