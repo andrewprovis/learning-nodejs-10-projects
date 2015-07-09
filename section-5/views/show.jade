@@ -1,3 +1,13 @@
 //
    Created by aprovis on 09/07/15.
 
+extends layout
+
+block content
+   .show
+      h1=post.title
+      p.meta Posted in
+         a(href='/categories/show/#{post.category}')  #{post.category}
+         span  by #{post.author} on #{moment(post.date).format("DD-MMM-YYYY")}
+      img(src='/images/uploads/#{post.mainimage}')
+      !=post.body
