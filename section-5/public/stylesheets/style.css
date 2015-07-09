@@ -113,3 +113,30 @@ textarea {
   height: 70px;
   width: 400px;
 }
+
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  list-style: none;
+}
+
+.alert-danger {
+  color: #A94442;
+  background-color: #F2DEDE;
+  border-color: #EBCCD1;
+}
+
+ul.success li {
+  padding: 15px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #3C763D;
+  background-color: #DFF0D8;
+  border-color: #D6E9C6;
+  list-style: none;
+}
+}
