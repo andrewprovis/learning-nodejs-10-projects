@@ -26,7 +26,7 @@ block content
             each error, i in errors
                li.alert.alert-danger #{error.msg}
       form.comment-form(method='post', action='/posts/addcomment')
-         input(name='popstid', type='hidden', value='#{post._id}')
+         input(name='postid', type='hidden', value='#{post._id}')
          .form-group
             label Name
             input.form-control(type='text', name='name')
