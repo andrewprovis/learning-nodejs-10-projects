@@ -143,4 +143,10 @@ ul.success li {
   border-color: #D6E9C6;
   list-style: none;
 }
+
+footer {
+  margin-top: 20px;
+  text-align: center;
+  height: 30px;
+  border-top: 1px solid grey;
 }
