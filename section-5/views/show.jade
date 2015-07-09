@@ -21,9 +21,10 @@ block content
                p.comment-text #{comment.text}
          br
       h3 Add Comment
-      ul.errors
-         each error, i in errors
-            li.alert.alert-danger #{error.msg}
+      if errors
+         ul.errors
+            each error, i in errors
+               li.alert.alert-danger #{error.msg}
       form.comment-form(method='post', action='/posts/addcomment')
          input(name='popstid', type='hidden', value='#{post._id}')
          .form-group
