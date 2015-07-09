@@ -7,6 +7,15 @@ var router = express.Router();
 var mongo = require('mongodb');
 var db = require('monk')('localhost/nodeblog');
 
+router.get('/show/:id', function(req, res, next) {
+    var posts = db.get('posts');
+    posts.findById(req.params.id, function(err, post) {
+        res.render('show', {
+            "post": post
+        });
+    });
+});
+
 router.get('/add', function(req, res, next) {
     var categories = db.get('categories');
 
